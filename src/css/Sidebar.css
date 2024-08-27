@@ -1,0 +1,61 @@
+.sidebar {
+  width: 250px;
+  background-color: #2b2d42;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background-color: #1a1b26;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.home::before {
+  content: '🏠'; /* Home icon placeholder */
+  font-style: normal;
+}
+
+.news::before {
+  content: '📰'; /* News icon placeholder */
+  font-style: normal;
+}
+
+.workshop::before {
+  content: '🔧'; /* Workshop icon placeholder */
+  font-style: normal;
+}
+
+.settings::before {
+  content: '⚙️'; /* Settings icon placeholder */
+  font-style: normal;
+}
+
+.about::before {
+  content: 'ℹ️'; /* About icon placeholder */
+  font-style: normal;
+}

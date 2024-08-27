@@ -1,0 +1,60 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-style: normal;
+  color: #f6f6f6;
+  background-color: #1a1b26;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* 左侧是侧边栏，右侧是内容区域 */
+  height: 100%;
+}
+
+.sidebar {
+  width: 250px; /* 固定侧边栏宽度 */
+  background-color: #2b2d42;
+  color: white;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* 固定侧边栏位置 */
+  height: 100%; /* 使侧边栏高度占满整个视口高度 */
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background-color: #1a1b26;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.content {
+  padding: 50px;
+  overflow-y: auto; /* 使内容区域可以滚动 */
+  margin-left: 250px; /* 为侧边栏留出空间 */
+}
