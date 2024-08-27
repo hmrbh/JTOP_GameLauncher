@@ -1,5 +1,25 @@
 # **JTOP游戏启动器（JTOP游戏平台）**
 
+### 先决条件
+
+请确保您的操作系统上安装了Node JS和Rust。
+
+打开终端，输入以下命令来安装Tauri CLI
+
+```bash
+npm install --save-dev @tauri-apps/cli
+```
+
+如果在运行上面的命令时出现网络问题，建议使用`cnpm`作为您的包管理器。
+
+```bash
+ npm install -g cnpm --registry=http://registry.npmmirror.com
+```
+
+在安装`cnpm`后，您可以用`cnpm`来替换`npm`，例如输入`npm run tauri dev`替换为`cnpm run tauri dev`
+
+
+
 ### 运行方法
 
 在本目录位置打开终端，输入
