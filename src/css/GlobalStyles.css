@@ -54,7 +54,8 @@ body, html {
 }
 
 .content {
-  padding: 50px;
+  width: 920px;
+  margin: 0 auto;
   overflow-y: auto; /* 使内容区域可以滚动 */
   margin-left: 250px; /* 为侧边栏留出空间 */
 }
