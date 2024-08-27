@@ -22,7 +22,7 @@ npm install --save-dev @tauri-apps/cli
 
 ### 运行方法
 
-在本目录位置打开终端，输入
+在**本目录位置**打开终端，输入
 
 ```bash
 npm run tauri dev
@@ -32,7 +32,7 @@ npm run tauri dev
 
 1、将同级目录下的`AppData.Local.tauri.zip` 复制到`C:\Users\<你的用户名>\AppData\Local`目录下，只有在第一次打包时才复制，后续直接运行打包命令即可。
 
-2、在本目录位置打开终端，输入
+2、在**本目录位置**打开终端，输入
 
 ```bash
 npm run tauri build
