@@ -7,7 +7,7 @@
     background-color: var(--background-color);
     color: var(--text-color);
     margin: 0;
-    padding: 0;
+    padding: 0; 
     font-family: Arial, sans-serif;
     position: relative; /* 为iframeWindow提供定位上下文 */
   }
@@ -22,14 +22,14 @@
     scrollbar-width: none; /* Firefox 64+ */
   }
   
-  h1 {
+  .about-text-h1 {
     text-align: center;
     padding: 10px;
     margin-top: -220px;
     margin-bottom: 150px;
   }
   
-  p {
+  .about-text-p {
     padding: 10px;
     text-align: center;
     padding: 10px;

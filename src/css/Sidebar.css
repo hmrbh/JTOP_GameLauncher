@@ -3,7 +3,9 @@
   background-color: #2b2d42;
   color: white;
   padding: 20px;
-  height: 100vh;
+  overflow-y: auto;
+  height: 100%;
+  position: fixed; /* 固定侧边栏位置 */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -29,6 +31,11 @@
 .sidebar li.active,
 .sidebar li:hover {
   background-color: #1a1b26;
+}
+
+.content {
+  flex-grow: 1;
+  margin-left: 250px;
 }
 
 .icon {

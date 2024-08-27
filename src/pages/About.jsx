@@ -21,8 +21,8 @@ const About = () => {
       <div className="image-container">
         <img src="./../../img/bg.jpg" alt="My Image" />
       </div>
-      <h1>JTOP游戏启动器</h1>
-      <p>版本：v1.0.1.3a</p>
+      <h1 className="about-text-h1">JTOP游戏启动器</h1>
+      <p className="about-text-p">版本：v1.0.1.3a</p>
       <div className="button-container">
         <input type="image" src="./../../img/官方网站.png" alt="官方网站" onClick={() => openWebsite('https://jtopgame.top')} />
         <input type="image" src="./../../img/意见反馈.png" alt="意见反馈" onClick={() => openWebsite('https://jtopgame.top/')} />
