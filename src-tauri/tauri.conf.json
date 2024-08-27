@@ -17,6 +17,10 @@
         "open": true
       }
     },
+    "systemTray": {
+      "iconPath": "icons/logo.ico",
+      "iconAsTemplate": true
+    },
     "windows": [
       {
         "title": "JTOP 游戏平台",
