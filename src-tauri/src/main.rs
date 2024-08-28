@@ -4,12 +4,26 @@
 use tauri::{Manager, SystemTray, SystemTrayEvent};
 use tauri::{CustomMenuItem, SystemTrayMenu, SystemTrayMenuItem};
 use std::sync::{Arc, Mutex};
+use simplelog::*;
+use std::fs::File;
+
+extern crate simplelog;
+extern crate log;
 
 mod utils;
 
-fn main() {
-    let context = tauri::generate_context!();
 
+fn main() {
+
+    CombinedLogger::init(vec![
+        TermLogger::new(LevelFilter::Debug, Config::default(), TerminalMode::Mixed, ColorChoice::Auto),
+        WriteLogger::new(LevelFilter::Info, Config::default(), File::create("log.txt").unwrap()),
+    ]).unwrap();
+
+    log::debug!("创建系统托盘");
+
+    let context = tauri::generate_context!();
+    
     // 创建托盘菜单
     let quit = CustomMenuItem::new("quit".to_string(), "退出");
     let hide = CustomMenuItem::new("hide".to_string(), "隐藏窗口");
@@ -38,7 +52,7 @@ fn main() {
                         let mut is_show_window = is_show_window.lock().unwrap();
                         if *is_show_window {
                             if let Err(e) = window.hide() {
-                                eprintln!("Failed to hide window: {}", e);
+                                log::error!("无法隐藏窗口: {}", e)
                             }
                             let item_handle = app.tray_handle().get_item("hide");
                             let _ = item_handle.set_title("显示窗口");
@@ -46,7 +60,7 @@ fn main() {
                         }
                         else {
                             if let Err(e) = window.show() {
-                                eprintln!("Failed to show window: {}", e);
+                                log::error!("无法显示窗口: {}", e)
                             }
                             let item_handle = app.tray_handle().get_item("hide");
                             let _ = item_handle.set_title("隐藏窗口");
@@ -57,6 +71,13 @@ fn main() {
                 _ => {}
               }
             }
+            SystemTrayEvent::LeftClick { .. } => {
+              if let Some(window) = app.get_window("main") {
+                  if let Err(e) = window.show() {
+                      log::error!("无法显示窗口: {}", e)
+                  }
+              }
+          }
             _ => {}
           })
         .run(context)
