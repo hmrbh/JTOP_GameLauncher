@@ -1,15 +1,11 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-// Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-#[tauri::command]
-fn greet(name: &str) -> String {
-    format!("Hello, {}! You've been greeted from Rust!", name)
-}
-
 use tauri::{Manager, SystemTray, SystemTrayEvent};
 use tauri::{CustomMenuItem, SystemTrayMenu, SystemTrayMenuItem};
 use std::sync::{Arc, Mutex};
+
+mod utils;
 
 fn main() {
     let context = tauri::generate_context!();
@@ -28,7 +24,8 @@ fn main() {
     let is_show_window = Arc::new(Mutex::new(false)); 
 
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
+        // 注册指令 open_url_in_browser
+        .invoke_handler(tauri::generate_handler![open_url_in_browser])
         .system_tray(tray)
         .on_system_tray_event(move |app, event| match event {
             SystemTrayEvent::MenuItemClick { id, .. } => {
@@ -64,4 +61,9 @@ fn main() {
           })
         .run(context)
         .expect("error while running tauri application");
+}
+
+#[tauri::command]
+fn open_url_in_browser(url: &str) {
+  utils::open_url_in_default_browser(url);
 }

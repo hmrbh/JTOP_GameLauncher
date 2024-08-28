@@ -5,7 +5,12 @@ const About = () => {
   const [iframeVisible, setIframeVisible] = useState(false);
 
   const openWebsite = (url) => {
-    window.open(url, '_blank');
+    const { invoke } = window.__TAURI__.tauri
+    // 在默认浏览器打开链接
+    invoke('open_url_in_browser', { url: url })
+    .then((response) => {
+      window.header.innerHTML = response
+    })
   };
 
   const openIframe = () => {

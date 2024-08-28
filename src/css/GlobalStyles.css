@@ -6,6 +6,7 @@ body, html {
   font-style: normal;
   color: #f6f6f6;
   background-color: #1a1b26;
+  overflow-x: hidden;
 }
 
 .container {
@@ -19,8 +20,8 @@ body, html {
 }
 
 .content {
-  width: 920px;
-  margin: 0 auto;
+  width: 100%;
+  padding: 0, 20px;
   overflow-y: auto; /* 使内容区域可以滚动 */
   margin-left: 250px; /* 为侧边栏留出空间 */
 }
