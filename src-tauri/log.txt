@@ -1,3 +1,1 @@
-08:40:05 [INFO] 创建系统托盘
-08:40:36 [WARN] NewEvents emitted without explicit RedrawEventsCleared
-08:40:36 [WARN] RedrawEventsCleared emitted without explicit MainEventsCleared
+09:36:42 [INFO] 创建系统托盘

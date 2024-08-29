@@ -10,7 +10,6 @@ body, html {
 }
 
 .container {
-  display: grid;
   grid-template-columns: 250px 1fr; /* 左侧是侧边栏，右侧是内容区域 */
   height: 100%;
 }
@@ -20,8 +19,6 @@ body, html {
 }
 
 .content {
-  width: 100%;
-  padding: 0, 20px;
   overflow-y: auto; /* 使内容区域可以滚动 */
   margin-left: 250px; /* 为侧边栏留出空间 */
 }
