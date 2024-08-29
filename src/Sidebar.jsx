@@ -1,3 +1,4 @@
+// Sidebar.jsx
 import React, { useState } from 'react';
 import './css/Sidebar.css';
 import Home from './pages/Home';

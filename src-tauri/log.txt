@@ -1,1 +1,3 @@
-09:36:42 [INFO] 创建系统托盘
+10:20:23 [INFO] 创建系统托盘
+10:20:45 [WARN] Error occurred while processing dropped/hovered item: item is not a file.
+10:20:49 [WARN] Error occurred while processing dropped/hovered item: item is not a file.

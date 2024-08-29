@@ -1,25 +1,28 @@
+// About.jsx
 import React, { useState } from 'react';
-import './/..//css/About.css'; 
+import './../css/About.css'; 
+import ThirdPartyPage from './ThirdParty'; // 导入ThirdParty组件
+import './../css/ThirdPartyFrame.css'; // 导入模态框样式
 
 const About = () => {
-  const [iframeVisible, setIframeVisible] = useState(false);
+    const [iframeVisible, setIframeVisible] = useState(false);
+    
+    const openWebsite = (url) => {
+        const { invoke } = window.__TAURI__.tauri
+        // 在默认浏览器打开链接
+        invoke('open_url_in_browser', { url: url })
+        .then((response) => {
+        window.header.innerHTML = response
+        })
+    };
 
-  const openWebsite = (url) => {
-    const { invoke } = window.__TAURI__.tauri
-    // 在默认浏览器打开链接
-    invoke('open_url_in_browser', { url: url })
-    .then((response) => {
-      window.header.innerHTML = response
-    })
-  };
+    const openIframe = () => {
+        setIframeVisible(true);
+    };
 
-  const openIframe = () => {
-    setIframeVisible(true);
-  };
-
-  const closeIframe = () => {
-    setIframeVisible(false);
-  };
+    const closeIframe = () => {
+        setIframeVisible(false);
+    };
 
   return (
     <div className="about-container">
@@ -35,10 +38,12 @@ const About = () => {
       </div>
 
       {iframeVisible && (
-        <div id="mask" onClick={closeIframe}>
-          <div id="iframeWindow">
-            <div className="closeButton" onClick={closeIframe}>&times;</div>
-            <iframe id="iframeDisplay" src="third-party.html" title="Third Party Content"></iframe>
+        <div className="modal-overlay" onClick={closeIframe}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={closeIframe}>X</button>
+            <div className="modal-content-inner">
+              <ThirdPartyPage />
+            </div>
           </div>
         </div>
       )}
