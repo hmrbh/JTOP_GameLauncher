@@ -51,17 +51,17 @@ npm run dev
 
 然后再打开`JTOP_GameLauncher/src-tauri/src/main.rs`，
 
-![how to run this project](.\img\how to run this project.png)
+![how to run this project](img\how-to-run-this-project.png)
 
 点击main函数上面的“Run”即可运行。
 
 如果您没有看到`Run`的字样，说明您没有安装rust插件扩展包
 
-![rust extensions](.\img\rust extensions.png)
+![rust extensions](img/rust-extensions.png "rust extensions")
 
 或者rust解释器插件正在扫描您的项目。请耐心等待。
 
-![analyzer running](.\img\analyzer running.png)
+![analyzer running](.\img\analyzer-running.png)
 
 ### 打包方法
 
