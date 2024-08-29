@@ -76,12 +76,15 @@ fn main() {
             SystemTrayEvent::DoubleClick { .. } => {
               if let Some(window) = app.get_window("main") {
                 log::info!("托盘双击，显示窗口在最上层");
-                // 显示窗口在最上层
-                if let Err(e) = window.set_focus() {
+                  if let Err(e) = window.show() {
+                      log::error!("无法在设置窗口焦点前显示窗口: {}", e);
+                  }
+                  
+                  if let Err(e) = window.set_focus() {
                     log::error!("无法设置窗口焦点: {}", e);
+                  }
                 }
-              }
-            }
+             }
             _ => {}
           })
         .run(context)
