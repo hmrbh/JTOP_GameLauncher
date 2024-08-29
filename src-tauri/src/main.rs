@@ -96,3 +96,5 @@ fn open_url_in_browser(url: &str) {
   utils::open_url_in_default_browser(url);
   log::info!("打开网页：{}", url)
 }
+
+

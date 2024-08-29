@@ -51,11 +51,13 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background: red;
-  color: white;
-  border: none;
-  border-radius: 50%;
+  color: white; /* 文字颜色设置为白色 */
+  background: transparent; /* 背景设置为透明 */
+  border: none; /* 边框设置为无 */
+  border-radius: 50%; /* 边框圆角设置为50%，使按钮看起来更圆润 */
   width: 30px;
   height: 30px;
   cursor: pointer;
+  /* 添加以下样式以在鼠标悬停时显示手形光标，增强用户体验 */
+  transition: background-color 0.3s ease;
 }
