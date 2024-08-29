@@ -30,10 +30,21 @@ const About = () => {
       </div>
 
       {iframeVisible && (
+<<<<<<< Updated upstream
         <div id="mask" onClick={closeIframe}>
           <div id="iframeWindow">
             <div className="closeButton" onClick={closeIframe}>&times;</div>
             <iframe id="iframeDisplay" src="third-party.html" title="Third Party Content"></iframe>
+=======
+        <div className="modal-overlay" onClick={closeIframe}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            {/* 关闭按钮，点击时调用closeIframe函数 */}
+            <button className="close-button" onClick={closeIframe}>×</button>
+            {/* 模态框内容区域 */}
+            <div className="modal-content-inner">
+              <ThirdPartyPage />
+            </div>
+>>>>>>> Stashed changes
           </div>
         </div>
       )}
