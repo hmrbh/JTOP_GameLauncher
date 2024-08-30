@@ -32,21 +32,21 @@ const About = () => {
     return (
         <div className="about-container">
             <div className="image-container">
-                <img src="./../../img/bg.jpg" alt="My Image" />
+                <img src="img/bg.jpg" alt="My Image" />
             </div>
             <h1 className="about-text-h1">JTOP游戏启动器</h1>
             <p className="about-text-p">版本：v1.0.1.3a</p>
             <div className="button-container">
-                <input type="image" src="./../../img/官方网站.png" alt="官方网站" onClick={() => openWebsite('https://jtopgame.top')}  />
-                <input type="image" src="./../../img/意见反馈.png" alt="意见反馈" onClick={() => openWebsite('https://jtopgame.top/')}  />
-                <input type="image" src="./../../img/开源信息.png" alt="开源信息" id="openIframeButton" onClick={openIframe} />
+                <input type="image" src="img/官方网站.png" alt="官方网站" onClick={() => openWebsite('https://jtopgame.top')}  />
+                <input type="image" src="img/意见反馈.png" alt="意见反馈" onClick={() => openWebsite('https://jtopgame.top/')}  />
+                <input type="image" src="img/开源信息.png" alt="开源信息" id="openIframeButton" onClick={openIframe} />
             </div>
 
             {iframeVisible && (
                 <div className="modal-overlay" onClick={closeIframe}>
                     <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                         {/* 关闭按钮，点击时调用closeIframe函数 */}
-                        <button className="close-button" onClick={closeIframe}>X</button>
+                        <button className="close-button" onClick={closeIframe}>×</button>
                         {/* 模态框内容区域 */}
                         <div className="modal-content-inner">
                             <ThirdPartyPage />

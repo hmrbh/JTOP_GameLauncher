@@ -5,8 +5,13 @@ body, html {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-style: normal;
   color: #f6f6f6;
-  background-color: transparent;
-  overflow-x: hidden;
+  border-radius: 8px; /* 设置圆角大小 */
+  background-color: #1E1F22;
+}
+
+body, html > * {
+  border-radius: 8px; /* 确保子元素也带有圆角 */
+  overflow: hidden;
 }
 
 #app {

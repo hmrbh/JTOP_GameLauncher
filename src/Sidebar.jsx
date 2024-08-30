@@ -20,22 +20,23 @@ const Sidebar = () => {
       <div className="sidebar">
         <h1>JTOP游戏启动器</h1>
         <ul>
-          <li className={activePage === 'home' ? 'active' : ''} onClick={() => handlePageChange('home')}>
+          <li className={`${activePage === 'home' ? 'active' : ''} ${activePage === 'home' ? 'bold' : ''}`} onClick={() => handlePageChange('home')}>
             <i className="icon home"></i> 游戏
           </li>
-          <li className={activePage === 'news' ? 'active' : ''} onClick={() => handlePageChange('news')}>
+          <li className={`${activePage === 'news' ? 'active' : ''} ${activePage === 'news' ? 'bold' : ''}`} onClick={() => handlePageChange('news')}>
             <i className="icon news"></i> 新闻
           </li>
-          <li className={activePage === 'workshop' ? 'active' : ''} onClick={() => handlePageChange('workshop')}>
+          <li className={`${activePage === 'workshop' ? 'active' : ''} ${activePage === 'workshop' ? 'bold' : ''}`} onClick={() => handlePageChange('workshop')}>
             <i className="icon workshop"></i> 创意工坊
           </li>
-          <li className={activePage === 'settings' ? 'active' : ''} onClick={() => handlePageChange('settings')}>
+          <li className={`${activePage === 'settings' ? 'active' : ''} ${activePage === 'settings' ? 'bold' : ''}`} onClick={() => handlePageChange('settings')}>
             <i className="icon settings"></i> 设置
           </li>
-          <li className={activePage === 'about' ? 'active' : ''} onClick={() => handlePageChange('about')}>
+          <li className={`${activePage === 'about' ? 'active' : ''} ${activePage === 'about' ? 'bold' : ''}`} onClick={() => handlePageChange('about')}>
             <i className="icon about"></i> 关于
           </li>
         </ul>
+        <div className="sidebar-divider"></div> {/* 插入分割线 */}
       </div>
 
       <div className="content">

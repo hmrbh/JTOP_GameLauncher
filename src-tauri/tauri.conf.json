@@ -7,7 +7,7 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "JTOP Game Launcher",
+    "productName": "JTOP Game Launcher",  
     "version": "0.1.0"
   },
   "tauri": {
@@ -18,15 +18,7 @@
         "open": true
       },
       "window": {
-        "all": false,
-        "close": true,
-        "hide": true,
-        "show": true,
-        "maximize": true,
-        "minimize": true,
-        "unmaximize": true,
-        "unminimize": true,
-        "startDragging": true
+        "all": true
       }
     },
     "systemTray": {
