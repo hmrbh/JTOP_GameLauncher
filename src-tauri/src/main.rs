@@ -5,14 +5,40 @@ use tauri::{Manager, SystemTray, SystemTrayEvent, CustomMenuItem, SystemTrayMenu
 use std::sync::{Arc, Mutex};
 use simplelog::*;
 use std::fs::File;
+use cpython::{PyModule, PyTuple, Python};
+use cpython::ObjectProtocol;
+use cpython::ToPyObject;
+use cpython::PythonObject;
 
 extern crate simplelog;
 extern crate log;
 
 mod utils;
 
-fn main() {
+fn python_sum() {
+    let gil = Python::acquire_gil();
+    let py = gil.python();
+    
+    // 导入模块
+    let sys = PyModule::import(py, "sys").expect("无法导入sys模块");
+    let path = sys.get(py, "path").expect("无法获取sys.path");
+    // 这里的路径是相对于当前运行目录的，所以要注意路径的设置
+    path.call_method(py, "append", (".",), None).expect("无法追加路径");
+    // 导入函数
+    let main_module = PyModule::import(py, "test01").expect("无法导入test01模块");
+    let get_sum_func = main_module.get(py, "sum").expect("无法获取sum函数");
+    // 准备参数
+    let arg1: i32 = 10; // 第一个参数
+    let arg2: i32 = 20; // 第二个参数
+    let args = PyTuple::new(py, &[arg1.to_py_object(py).into_object(), arg2.to_py_object(py).into_object()]);
+    // 调用 Python 函数并获取返回值
+    let result = get_sum_func.call(py, args, None).expect("无法调用sum函数");
+    println!("结果是: {}", result.extract::<i32>(py).expect("无法提取结果"));
+}
 
+fn main() {
+    python_sum();
+    
     CombinedLogger::init(vec![
         TermLogger::new(LevelFilter::Debug, Config::default(), TerminalMode::Mixed, ColorChoice::Auto),
         WriteLogger::new(LevelFilter::Info, Config::default(), File::create("log.log").unwrap()),
@@ -96,5 +122,3 @@ fn open_url_in_browser(url: &str) {
   utils::open_url_in_default_browser(url);
   log::info!("打开网页：{}", url)
 }
-
-
