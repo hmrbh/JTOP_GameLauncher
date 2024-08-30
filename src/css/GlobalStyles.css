@@ -14,6 +14,18 @@ body, html > * {
   overflow: hidden;
 }
 
+#app {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px; /* 设置圆角大小 */
+  overflow: hidden;
+  background-color: white; /* 设置背景颜色 */
+}
+
+#app > * {
+  border-radius: 10px; /* 确保子元素也带有圆角 */
+  overflow: hidden;
+}
 .container {
   display: grid;
   grid-template-columns: 250px 1fr; /* 左侧是侧边栏，右侧是内容区域 */
