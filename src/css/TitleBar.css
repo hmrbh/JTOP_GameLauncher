@@ -1,22 +1,41 @@
-﻿.titlebar {
+﻿/* TitleBar.css */
+.titlebar {
     height: 30px;
     background: #121212;
     user-select: none;
     display: flex;
     justify-content: flex-end;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
+    position: static;
 }
+
 .titlebar-button {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* 使用 flex 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
     width: 30px;
     height: 30px;
 }
+
+.titlebar-button img {
+    margin: 0 5px;
+}
+
 .titlebar-button:hover {
     background: #484B4D;
+}
+
+.titlebar-button-close {
+    display: flex; /* 使用 flex 布局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 30px;
+    height: 30px;
+}
+
+.titlebar-button-close img {
+    margin: 0 5px;
+}
+
+.titlebar-button-close:hover {
+    background: #FF5353;
 }

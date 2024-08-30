@@ -25,18 +25,18 @@ const TitleBar = () => {
         <div data-tauri-drag-region="true" className="titlebar">
             <div className="titlebar-button" id="titlebar-minimize">
                 <img
-                    src="../img/minisize.png"
+                    src="./img/minimize.png"
                     alt="minimize"
                 />
             </div>
             <div className="titlebar-button" id="titlebar-maximize">
                 <img
-                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAVUlEQVR4nGNgGAUkAg8GBobHDAwM/9EwLoCu7hHUDJzgERZN//Gox6YWZAZBDeSC/4T0j1rwn8IgHgWjgAgwmtH+D3hZ9IjWxbUHDkuoVuGMAgZ0AADoT0vu2C9MdgAAAABJRU5ErkJggg=="
+                    src="./img/maximize.png"
                     alt="maximize"
                 />
             </div>
-            <div className="titlebar-button" id="titlebar-close">
-                <img src="https://api.iconify.design/mdi:close.svg" alt="close"/>
+            <div className="titlebar-button-close" id="titlebar-close">
+                <img src="./img/close.png" alt="close"/>
             </div>
         </div>
     );

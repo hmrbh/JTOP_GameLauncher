@@ -38,7 +38,10 @@
         "title": "JTOP Game Launcher",
         "width": 1200,
         "height": 700,
-        "decorations": false
+        "decorations": false,
+        "transparent": true,
+        "resizable": false,
+        "center": true
       }
     ],
     "security": {
