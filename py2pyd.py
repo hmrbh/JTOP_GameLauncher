@@ -45,6 +45,7 @@ def compile_to_pyd(directory):
             if file.endswith('.c'):
                 os.remove(os.path.join(root, file))
                 print(f"Deleted {os.path.join(root, file)}")
+                
 if __name__ == "__main__":
     # 检查是否提供了目录参数
     if len(sys.argv) > 1:

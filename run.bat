@@ -4,16 +4,20 @@ chcp 65001
 set "SourceDir=.\src-python\"
 set "TargetDir_d=.\src-tauri\target\debug\"
 set "TargetDir_r=.\src-tauri\target\release\"
+set "PythonPath=.\python-3.12.5-amd64\python.exe"
 
 :: 删除所有python文件
 del /Q "%TargetDir_d%\*.py"
 del /Q "%TargetDir_r%\*.py"
 
-:: 复制所有python文件
-if not exist "%TargetDir_d%" mkdir "%TargetDir_d%"
-xcopy /E /I /Y "%SourceDir%" "%TargetDir_d%"
+cmd /c (%PythonPath% py2pyd.py .\src-python)
 
-if not exist "%TargetDir_r%" mkdir "%TargetDir_r%"
-xcopy /E /I /Y "%SourceDir%" "%TargetDir_r%"
+:: 复制所有pyd文件到目标目录
+for %%f in (".\*.pyd") do (
+    copy /Y "%%f" "%TargetDir_d%"
+)
+for %%f in (".\*.pyd") do (
+    copy /Y "%%f" "%TargetDir_r%"
+)
 
 npm run tauri dev

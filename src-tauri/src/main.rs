@@ -5,7 +5,7 @@ use tauri::{Manager, SystemTray, SystemTrayEvent, CustomMenuItem, SystemTrayMenu
 use std::sync::{Arc, Mutex};
 use simplelog::*;
 use std::fs::File;
-use cpython::{PyModule, PyTuple, Python};
+use cpython::{PyTuple, Python};
 use cpython::ObjectProtocol;
 use cpython::ToPyObject;
 use cpython::PythonObject;
@@ -37,7 +37,21 @@ fn python_sum() {
 }
 
 fn main() {
-    python_sum();
+    //python_sum();
+    // 初始化 Python 解释器
+    let gil = Python::acquire_gil();
+    let py = gil.python();
+
+    // 加载编译好的 Python 模块
+    let module = PyModule::import(py, "test01.cp312-win_amd64").expect("无法导入test01模块");
+    let get_sum_func = module.get(py, "sum").expect("无法获取sum函数");
+    // 准备参数
+    let arg1: i32 = 10; // 第一个参数
+    let arg2: i32 = 20; // 第二个参数
+    let args = PyTuple::new(py, &[arg1.to_py_object(py).into_object(), arg2.to_py_object(py).into_object()]);
+    // 调用 Python 函数并获取返回值
+    let result = get_sum_func.call(py, args, None).expect("无法调用sum函数");
+    println!("结果是: {}", result.extract::<i32>(py).expect("无法提取结果"));
     
     CombinedLogger::init(vec![
         TermLogger::new(LevelFilter::Debug, Config::default(), TerminalMode::Mixed, ColorChoice::Auto),
