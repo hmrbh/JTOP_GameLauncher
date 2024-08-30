@@ -1,12 +1,17 @@
 /* Sidebar.css */
+.sidebar-container {
+  display: flex;
+  height: 100%;
+  position: fixed;
+}
+
 .sidebar {
   width: 250px;
-  background-color: #2b2d42;
+  background-color: #121212;
   color: white;
   padding: 20px;
   overflow-y: auto;
   height: 100%;
-  position: fixed; /* 固定侧边栏位置 */
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -66,4 +71,15 @@
 .about::before {
   content: 'ℹ️'; /* About icon placeholder */
   font-style: normal;
+}
+
+/* 添加垂直分割线样式 */
+.sidebar-divider {
+  width: 1px;
+  background-color: #3B4045;
+  height: 100%;
+  margin-left: 250px;
+  position: absolute;
+  top: 120px;
+  bottom: 0;
 }

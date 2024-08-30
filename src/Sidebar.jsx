@@ -36,6 +36,7 @@ const Sidebar = () => {
             <i className="icon about"></i> 关于
           </li>
         </ul>
+        <div className="sidebar-divider"></div> {/* 插入分割线 */}
       </div>
 
       <div className="content">
