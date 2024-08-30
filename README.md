@@ -1,8 +1,19 @@
 # **JTOP游戏启动器（JTOP游戏平台）**
 
-**这里是实验性分支，任何新功能的代码都会先在这里提交**
 
-注意，本分支下的代码不保证程序能够正常且符合预期地运行，不能用于发布。
+
+## **TODO**
+
+1. 绘制自定义标题栏（官网有文档，百度搜tauri自定义标题栏）
+2. 将侧边栏的字符图标换成之前启动器用的侧边栏图标
+3. 关闭按钮保存点击后是否关闭或退出到系统托盘
+4. 让日志文件带时间编号，并放在APPDATA/LOACL/JTOP/JTOP Game Launcher目录里
+5. 设置界面搬过来
+6. 所有页面进行响应式布局设计，最大化窗口能够保持样式
+
+
+
+## 如何参与开发 ？
 
 ### 先决条件
 
@@ -40,17 +51,17 @@ npm run dev
 
 然后再打开`JTOP_GameLauncher/src-tauri/src/main.rs`，
 
-![how to run this project](.\img\how to run this project.png)
+![how to run this project](img/how-to-run-this-project.png)
 
 点击main函数上面的“Run”即可运行。
 
 如果您没有看到`Run`的字样，说明您没有安装rust插件扩展包
 
-![rust extensions](.\img\rust extensions.png)
+![rust extensions](img/rust-extensions.png "rust extensions")
 
 或者rust解释器插件正在扫描您的项目。请耐心等待。
 
-![analyzer running](.\img\analyzer running.png)
+![analyzer running](img/analyzer-running.png)
 
 ### 打包方法
 

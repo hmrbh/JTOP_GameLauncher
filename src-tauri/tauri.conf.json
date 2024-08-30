@@ -3,7 +3,8 @@
     "beforeDevCommand": "npm run dev",
     "beforeBuildCommand": "npm run build",
     "devPath": "http://localhost:1420",
-    "distDir": "../dist"
+    "distDir": "../dist",
+    "withGlobalTauri": true
   },
   "package": {
     "productName": "JTOP Game Launcher",
@@ -34,7 +35,7 @@
     },
     "windows": [
       {
-        "title": "JTOP 游戏平台",
+        "title": "JTOP Game Launcher",
         "width": 1200,
         "height": 700,
         "decorations": false,

@@ -4,6 +4,7 @@ import './../css/About.css'; // 导入关于页面的CSS样式
 import ThirdPartyPage from './ThirdPartyPage'; // 导入第三方页面组件
 import '../css/ThirdPartyFrame.css'; // 导入第三方页面模态框样式
 
+
 const About = () => {
     // 使用useState钩子创建一个状态来控制iframe的可见性
     const [iframeVisible, setIframeVisible] = useState(false);
