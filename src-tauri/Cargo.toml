@@ -22,10 +22,9 @@ log = "0.4"
 # This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!
 custom-protocol = ["tauri/custom-protocol"]
 
-# 使用tauri官方的推荐配置
 [profile.release]
-panic = "abort" # Strip expensive panic clean-up logic
-codegen-units = 1 # Compile crates one after another so the compiler can optimize better
-lto = true # Enables link to optimizations
-opt-level = "s" # Optimize for binary size
-strip = true # Remove debug symbols
+panic = "abort" # 在发生panic时立即终止（abort）而不是进行堆栈展开（stack unwinding）。
+codegen-units = 1 # 这个配置项指定了编译器在生成代码时，将所有包逐个编译，带来更好的性能和更小的二进制文件。
+lto = true # 启用了链接时优化
+opt-level = 3 # 让编译器进行所有可能的优化
+strip = true # 在生成最终的二进制文件时，移除所有的调试符号。
