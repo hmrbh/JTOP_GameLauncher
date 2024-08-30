@@ -46,7 +46,7 @@ const About = () => {
         <div className="modal-overlay" onClick={closeIframe}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             {/* 关闭按钮，点击时调用closeIframe函数 */}
-            <button className="close-button" onClick={closeIframe}>X</button>
+            <button className="close-button" onClick={closeIframe}>×</button>
             {/* 模态框内容区域 */}
             <div className="modal-content-inner">
               <ThirdPartyPage />
