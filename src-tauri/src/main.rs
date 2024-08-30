@@ -15,7 +15,7 @@ fn main() {
 
     CombinedLogger::init(vec![
         TermLogger::new(LevelFilter::Debug, Config::default(), TerminalMode::Mixed, ColorChoice::Auto),
-        WriteLogger::new(LevelFilter::Info, Config::default(), File::create("log.txt").unwrap()),
+        WriteLogger::new(LevelFilter::Info, Config::default(), File::create("log.log").unwrap()),
     ]).unwrap();
 
     log::info!("创建系统托盘");
