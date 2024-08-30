@@ -27,20 +27,16 @@ const ThirdPartyPage = () => {
               <br/>
               limitations under the License.
           </p>
-          <a target="_blank" href="https://icons8.com/icon/83326/home">Home</a> icon by <a target="_blank"
-                                                                                           href="https://icons8.com">Icons8</a><br/>
-          <a target="_blank" href="https://icons8.com/icon/82740/puzzle">Puzzle</a> icon by <a target="_blank"
-                                                                                               href="https://icons8.com">Icons8</a><br/>
-          <a target="_blank" href="https://icons8.com/icon/82755/news">News</a> icon by <a target="_blank"
-                                                                                           href="https://icons8.com">Icons8</a><br/>
-          <a target="_blank" href="https://icons8.com/icon/82535/settings">Setting</a> icon by <a target="_blank"
-                                                                                                  href="https://icons8.com">Icons8</a><br/>
-          <a target="_blank" href="https://icons8.com/icon/82742/info">About</a> icon by <a target="_blank"
-                                                                                            href="https://icons8.com">Icons8</a><br/>
-          <a target="_blank" href="https://icons8.com/icon/85424/minus">minimize</a> icon by <a target="_blank"
-                                                                                                href="https://icons8.com">Icons8</a>
+          <a target="_blank" href="https://icons8.com/icon/83326/home">Home</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br/>
+          <a target="_blank" href="https://icons8.com/icon/82740/puzzle">Puzzle</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br/>
+          <a target="_blank" href="https://icons8.com/icon/82755/news">News</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br/>
+          <a target="_blank" href="https://icons8.com/icon/82535/settings">Setting</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br/>
+          <a target="_blank" href="https://icons8.com/icon/82742/info">About</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br/>
+          <a target="_blank" href="https://icons8.com/icon/85424/minus">minimize</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a><br/>
+          <a target="_blank" href="https://icons8.com/icon/mMwrGlrNuh5S/maximize-button">Maximize Button</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> <br/>
+          <a target="_blank" href="https://icons8.com/icon/83149/close">Close</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
       </div>
-  );
+  )
 };
 
 export default ThirdPartyPage;

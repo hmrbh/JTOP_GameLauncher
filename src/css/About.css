@@ -32,7 +32,6 @@
   .about-text-p {
     padding: 10px;
     text-align: center;
-    padding: 10px;
     margin-top: -160px;
     margin-bottom: 80px;
   }
@@ -69,7 +68,6 @@
   
   .button-container input[type="image"]:hover {
     transform: scale(1.1);
-<<<<<<< Updated upstream
   }
   
   #iframeWindow {
@@ -115,11 +113,7 @@
     z-index: 1000;
   }
   
-=======
-}
-
 .close-button {
     /* 开源信息窗口关闭按钮 */
     font-size: 25px;
 }
->>>>>>> Stashed changes
