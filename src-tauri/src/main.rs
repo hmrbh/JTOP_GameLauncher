@@ -5,9 +5,6 @@ use tauri::{Manager, SystemTray, SystemTrayEvent, CustomMenuItem, SystemTrayMenu
 use std::sync::{Arc, Mutex};
 use simplelog::*;
 use std::fs::File;
-use cpython::{PyModule, PyTuple, Python, ToPyObject};
-use cpython::ObjectProtocol;
-use cpython::PythonObject;
 
 extern crate simplelog;
 extern crate log;
@@ -15,25 +12,6 @@ extern crate log;
 mod utils;
 
 fn main() {
-    // 初始化 Python 解释器
-    let gil = Python::acquire_gil();
-    let py = gil.python();
-
-    // 添加模块路径到 sys.path
-    let sys_path = py.import("sys").unwrap().get(py, "path").unwrap();
-    sys_path.call_method(py, "append", (".",), None).unwrap();
-
-    // 使用绝对路径加载编译好的 Python 模块
-    let module = PyModule::import(py, "export_py_func").expect("无法导入export_py_func模块");
-    let get_sum_func = module.get(py, "sum").expect("无法获取sum函数");
-    // 准备参数
-    let arg1: i32 = 10; // 第一个参数
-    let arg2: i32 = 20; // 第二个参数
-    let args = PyTuple::new(py, &[arg1.into_py_object(py).into_object(), arg2.into_py_object(py).into_object()]);
-    // 调用 Python 函数并获取返回值
-    let result = get_sum_func.call(py, args, None).expect("无法调用sum函数");
-    println!("结果是: {}", result.extract::<i32>(py).expect("无法提取结果"));
-    
     CombinedLogger::init(vec![
         TermLogger::new(LevelFilter::Debug, Config::default(), TerminalMode::Mixed, ColorChoice::Auto),
         WriteLogger::new(LevelFilter::Info, Config::default(), File::create("log.log").unwrap()),

@@ -6,25 +6,6 @@ echo 请耐心等待编译完成
 
 start /WAIT cmd /c npm run tauri build
 
-set "SourceDir=.\src-tauri\target\release\"
-set "SourceFile=.\src-tauri\target\release\JTOP Game Launcher.exe"
-set "TargetDir=.\bin"
-set "PythonPath=./python-3.12.5-amd64/python.exe"
-
-%PythonPath% py2pyd.py
-
-:: 复制所有py文件到release目录
-for %%f in ("src-python\*.py") do (
-    copy /Y "%%f" "%TargetDir%"
-)
-
-del /Q ".\build\lib.win-amd64-cpython-312\*.pyd"
-
-:: 复制所有py文件到发布目录
-for %%f in ("%SourceDir%\*.py") do (
-    copy /Y "%%f" "%TargetDir%"
-)
-
 :: 检查发布目录是否存在，如果不存在则创建它
 if not exist "%TargetDir%" mkdir "%TargetDir%"
 
