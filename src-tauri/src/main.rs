@@ -24,7 +24,7 @@ fn main() {
     sys_path.call_method(py, "append", (".",), None).unwrap();
 
     // 使用绝对路径加载编译好的 Python 模块
-    let module = PyModule::import(py, "test01").expect("无法导入test01模块");
+    let module = PyModule::import(py, "export_py_func").expect("无法导入export_py_func模块");
     let get_sum_func = module.get(py, "sum").expect("无法获取sum函数");
     // 准备参数
     let arg1: i32 = 10; // 第一个参数
