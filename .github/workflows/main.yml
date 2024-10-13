@@ -13,12 +13,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
-        node-version: '14' # 选择适合你的项目的Node.js版本
+        node-version: '20' # 更新为Node.js 20
 
     - name: Set up Rust
       uses: actions-rs/toolchain@v1
