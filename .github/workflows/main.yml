@@ -18,8 +18,8 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '20'
-        
+        node-version: '14' # 选择适合你的项目的Node.js版本
+
     - name: Set up Rust
       uses: actions-rs/toolchain@v1
       with:
@@ -42,7 +42,7 @@ jobs:
         npm run tauri build
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: tauri-exe
         path: |
@@ -55,7 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download Artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: tauri-exe
         path: release
